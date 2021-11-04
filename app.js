@@ -46,4 +46,18 @@ app.get('/autocomplete', (req, res) => {
 		.catch(err => console.log('error:', err));
 })
 
+app.get('/search', (req, res) => {
+	console.log(req.query.search)
+	const params = {
+		projectId: process.env.PROJECT_ID,
+		collectionIds: collections.turnerFaq,
+		query: req.query.search,
+		count: 3
+	}
+
+	discovery.query(params)
+	.then(response => res.send(response.result))
+	.catch(err => console.log('error:', err));
+})
+
 app.listen(4000, () => console.log("server running on port: 4000"))
