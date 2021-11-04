@@ -1,4 +1,4 @@
-// MY packages
+// Packages
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -29,22 +29,21 @@ const collections = {
 	turnerFaq: ["b1360f4e-b705-1c1c-0000-017ce8968141"]
 }
 
+
+// ENDPOINTS
 app.get('/autocomplete', (req, res) => {
 	console.log("Autocomplete prefix: " + req.query.prefix)
+	
 	const params = {
 		projectId: process.env.PROJECT_ID,
 		collectionIds: collections.turnerFaq,
 		prefix: req.query.prefix,
 		count: 3
 	}
+	
 	discovery.getAutocompletion(params)
-		.then(response => {
-			// console.log(JSON.stringify(response.result, null, 2));
-			res.send(response.result)
-		})
-		.catch(err => {
-			console.log('error:', err);
-		});
+		.then(response => res.send(response.result))
+		.catch(err => console.log('error:', err));
 })
 
 app.listen(4000, () => console.log("server running on port: 4000"))
