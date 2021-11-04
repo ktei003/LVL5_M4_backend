@@ -30,11 +30,11 @@ const collections = {
 }
 
 app.get('/autocomplete', (req, res) => {
-	console.log("Autocomplete prefix: " + req.query.query)
+	console.log("Autocomplete prefix: " + req.query.prefix)
 	const params = {
-		projectId: globalParams.projectId,
+		projectId: process.env.PROJECT_ID,
 		collectionIds: collections.turnerFaq,
-		prefix: req.query.query,
+		prefix: req.query.prefix,
 		count: 3
 	}
 	discovery.getAutocompletion(params)
