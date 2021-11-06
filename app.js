@@ -68,7 +68,7 @@ app.get('/search', (req, res) => {
 	console.log(req.query.search)
 	const params = {
 		projectId: process.env.PROJECT_ID,
-		collectionIds: collections.turnerFaq,
+		collectionIds: [req.query.collection],
 		query: req.query.search,
 		count: 3
 	}
