@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+const port = process.env.PORT || 4000;
+
 // IBM Packages
 const DiscoveryV2 = require('ibm-watson/discovery/v2');
 const { IamAuthenticator } = require('ibm-watson/auth');
@@ -78,4 +80,4 @@ app.get('/search', (req, res) => {
 	.catch(err => console.log('error:', err));
 })
 
-app.listen(4000, () => console.log("server running on port: 4000"))
+app.listen(port, () => console.log("server running on port: " + port))
