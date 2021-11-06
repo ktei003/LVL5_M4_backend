@@ -25,9 +25,9 @@ const discovery = new DiscoveryV2({
 	serviceUrl: 'https://api.us-south.discovery.watson.cloud.ibm.com',
 });
 
-const collections = {
-	turnerFaq: ["b1360f4e-b705-1c1c-0000-017ce8968141"]
-}
+// const collections = {
+// 	turnerFaq: ["b1360f4e-b705-1c1c-0000-017ce8968141"]
+// }
 
 
 // ENDPOINTS
