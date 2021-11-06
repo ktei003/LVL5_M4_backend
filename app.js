@@ -54,7 +54,7 @@ app.get('/autocomplete', (req, res) => {
 	
 	const params = {
 		projectId: process.env.PROJECT_ID,
-		collectionIds: collections.turnerFaq,
+		collectionIds: [req.query.collection],
 		prefix: req.query.prefix,
 		count: 3
 	}
@@ -70,7 +70,7 @@ app.get('/search', (req, res) => {
 		projectId: process.env.PROJECT_ID,
 		collectionIds: [req.query.collection],
 		query: req.query.search,
-		count: 3
+		count: 6
 	}
 
 	discovery.query(params)
