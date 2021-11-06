@@ -31,6 +31,24 @@ const collections = {
 
 
 // ENDPOINTS
+app.get('/collections', (req, res) => {
+	const params = {
+		projectId: process.env.PROJECT_ID
+	}
+
+	discovery.listCollections(params)
+	.then(response => {
+		res.send(response.result.collections)
+		console.log(response)
+	})
+	.catch(err => {
+		console.log('error:', err);
+		res.status(400).send(err)
+	})
+
+
+})
+
 app.get('/autocomplete', (req, res) => {
 	console.log("Autocomplete prefix: " + req.query.prefix)
 	
