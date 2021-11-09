@@ -42,8 +42,6 @@ app.get('/collections', (req, res) => {
 		console.log('error:', err);
 		res.status(400).send(err)
 	})
-
-
 })
 
 app.get('/autocomplete', (req, res) => {
