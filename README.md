@@ -1,2 +1,2 @@
 # turners-search-backend
-Backend to the "turners-search" repository.
+Backend to the "turners-search-frontend" repository.
