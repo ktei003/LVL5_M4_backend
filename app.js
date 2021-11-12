@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const port = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 
 // IBM Packages
 const DiscoveryV2 = require('ibm-watson/discovery/v2');
@@ -73,4 +73,4 @@ app.get('/search', (req, res) => {
 	.catch(err => console.log('error:', err));
 })
 
-app.listen(port, () => console.log("server running on port: " + port))
+app.listen(PORT, () => console.log("server running on port: " + PORT))
