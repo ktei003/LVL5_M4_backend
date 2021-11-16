@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  sonarCloudTrigger:
-    name: SonarCloud Trigger
+  sonarCloud:
+    name: SonarCloud
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repo
